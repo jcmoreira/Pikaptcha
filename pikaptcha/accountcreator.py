@@ -111,7 +111,7 @@ def create_account(username, password, email, birthday, captchakey2, captchatime
     # Create account page
     print("Step 2: Entering account details")
     assert driver.current_url == "{}/parents/sign-up".format(BASE_URL)
-
+    driver.implicitly_wait(20)
     user = driver.find_element_by_name("username")
     user.clear()
     user.send_keys(username)
